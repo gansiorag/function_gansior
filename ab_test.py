@@ -14,18 +14,31 @@ def estimated_parameters(N,n):
     sigma=math.sqrt(p*(1-p)/N)
     return p, sigma
 
-#ПАрадокс мальчил девочка
+# произвольно выбрать мальчика или девочку
+def random_kid () :
+    return random.choice(["boy", "girl"])
+
+#Парадокс мальчил девочка
 def paradocs_gerl_boys():
     both_girls = 0
     older_girl = 0
     either_girl =0
-    random.seed(0)
-    for in range(10000):
-        younger =
-        # провести эксперимент на совокупности
-        # из 1 00 ООО семей
-        random_ki
-        d(
+    #print(random.getstate())
+    random.seed()
+    for _ in range(1000000000):     # провести эксперимент на совокупности
+        younger =random_kid()  # из 100 000 семей
+        older = random_kid()
+        if older == "girl" : # старшая?
+            older_girl += 1
+        if older == "girl" and younger == "girl" : # обе ?
+            both_girls += 1
+        if older == "girl" or younger == "girl" :# любая из двух?
+            either_girl += 1
+
+    print("Р(обе | старшая девочка):", both_girls / older_girl )    # 0.514 ~ 1/2
+    print("Р(обе | любая девочка  ):", both_girls / either_girl) # 0.342 ~ 1/3
+
+
 
 
 def a_b_test_statistic(N_A,n_A,N_B,n_B):
@@ -35,7 +48,7 @@ def a_b_test_statistic(N_A,n_A,N_B,n_B):
 
 if __name__=="__main__":
     print("Парадокс мальчик-девочка - 1")
-    input("Ваш выбор> ")
-    if z=="1":
+    z=input("Ваш выбор> ")
+    if z=="1" :paradocs_gerl_boys()
     # z=a_b_test_statistic(1000,200,1000,180)
     # print(z)
