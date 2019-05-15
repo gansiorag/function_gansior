@@ -15,8 +15,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ab_test.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="228">
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="114">
+              <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+=======
+            <state relative-caret-position="-20">
+>>>>>>> 8f736b52ce8680432caa5629821d01959fd267d2
               <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+>>>>>>> 244ca1543cb3be26ca485db68ed82ec2a0f9b786
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -37,10 +46,21 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
+<<<<<<< HEAD
+    <option name="x" value="103" />
+    <option name="y" value="170" />
+    <option name="width" value="1717" />
+    <option name="height" value="823" />
+=======
     <option name="x" value="186" />
     <option name="y" value="94" />
     <option name="width" value="1416" />
+<<<<<<< HEAD
     <option name="height" value="853" />
+=======
+    <option name="height" value="631" />
+>>>>>>> 244ca1543cb3be26ca485db68ed82ec2a0f9b786
+>>>>>>> 8f736b52ce8680432caa5629821d01959fd267d2
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -64,8 +84,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+<<<<<<< HEAD
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../WorkNeuroNet" />
+=======
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+>>>>>>> 244ca1543cb3be26ca485db68ed82ec2a0f9b786
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -121,7 +145,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="186" y="94" width="1416" height="853" extended-state="0" />
+=======
+<<<<<<< HEAD
+    <frame x="103" y="170" width="1717" height="823" extended-state="0" />
+=======
+    <frame x="186" y="235" width="1416" height="631" extended-state="0" />
+>>>>>>> 244ca1543cb3be26ca485db68ed82ec2a0f9b786
+    <editor active="true" />
+>>>>>>> 8f736b52ce8680432caa5629821d01959fd267d2
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3029433" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -145,8 +178,17 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/ab_test.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="228">
+=======
+<<<<<<< HEAD
+        <state relative-caret-position="114">
+          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+=======
+        <state relative-caret-position="-20">
+>>>>>>> 8f736b52ce8680432caa5629821d01959fd267d2
           <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+>>>>>>> 244ca1543cb3be26ca485db68ed82ec2a0f9b786
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
