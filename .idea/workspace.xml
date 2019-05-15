@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="02051e00-f52b-4c38-aa80-f007f7fa20df" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/statistic.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/statistic.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ab_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/ab_test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,7 +15,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ab_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-20">
+            <state relative-caret-position="228">
               <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
@@ -41,9 +38,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="186" />
-    <option name="y" value="235" />
+    <option name="y" value="94" />
     <option name="width" value="1416" />
-    <option name="height" value="631" />
+    <option name="height" value="853" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -51,6 +48,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -62,7 +60,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -124,15 +121,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="186" y="235" width="1416" height="631" extended-state="0" />
-    <editor active="true" />
+    <frame x="186" y="94" width="1416" height="853" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3029433" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3029433" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32914045" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32914045" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -149,7 +145,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/ab_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-20">
+        <state relative-caret-position="228">
           <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
