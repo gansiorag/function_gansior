@@ -11,35 +11,69 @@ import itertools
 import statsmodels.api as sm
 import pandas as pd
 import datetime
+import countStat as CS
 
 plt.style.use('fivethirtyeight')
 
 fs=ln.LinearRegression()
 
+#---------1. ------- Исходные данные -----------------------
+"""
+https://datahub.io/core/finance-vix/r/vix-daily.json
+
+Field information
+Field Name	Order	Type (Format)	Description
+Date	1	date (%Y-%m-%d)	
+VIX Open	2	number (default)	
+VIX High	3	number (default)	
+VIX Low	4	number (default)	
+VIX Close	5	number (default)
+
+"""
+
+
 
 x2=[[xx] for xx in np.arange(0.,100.,1.)]
+
 y=[]
+
 for kk in x2:
-    y.append(0.4*kk[0]+3+6*math.sin(kk[0]/3.14))
-print(y)
-ydata=pd.Series(y,name='Model')
-print(ydata)
-a=datetime.datetime.today()
+    y.append(0.5*kk[0]+3+10*math.sin(kk[0]/3.14)*random.random())
+
+#y=[6.0,4.4,5.0,9.0,7.2,4.8,6.0,10.0,8.0,5.6,6.4,11.0,9.0,6.6,7.0,10.8]
+
+#print(y)
+
+coef=CS.auto_corr(y)
+print(coef)
+
+rr=coef.pop(0)
+rr=coef.pop(0)
+print(max(coef))
+x=range(1,len(coef)+1)
+plt.plot(x,coef)
+
+"""
+#------------ end 1. ----------
+
+ydata=pd.Series(y,name='Model') # преобоазуем в массив pfndas.Series
+#print(ydata)
 dateList = []
-# for dd in range(0,100):
-#     dateList.append(a-datetime.timedelta(days=dd))
+
 start = datetime.datetime(2019,3,1)
 dategener= [start + datetime.timedelta(days= dd) for dd in range(0,100)]
+
 for dd in dategener:
     dateList.append(dd.strftime("%Y-%m-%d"))
-dateIsh=pd.DataFrame({'Date':dateList,
-                      'z':y},columns=['Date','z'],index=None)
-dateIsh.reset_index(inplace=True)
+
+dateIsh=pd.DataFrame({'Date':dateList,'z':y}, columns=['Date','z'], index=None)
+dateIsh.reset_index(inplace=None)
 dateIsh['Date'] = pd.to_datetime(dateIsh['Date'])
 dateIsh = dateIsh.set_index('Date')
-#print(dateIsh)
-print(dateIsh.describe())
-#print(dateIsh.isnull().sum())
+print(dateIsh)
+print(dateIsh['z'].describe())
+print("sum - ", dateIsh['z'].sum())
+
 from pylab import rcParams
 rcParams['figure.figsize']=11,9
 #dateIsh.plot(figsize=(15, 6))
@@ -98,6 +132,7 @@ print('SARIMAX: {} x {}'.format(pdq[2], seasonal_pdq[3]))
 print('SARIMAX: {} x {}'.format(pdq[2], seasonal_pdq[4]))
 warnings.filterwarnings("ignore") # отключает предупреждения
 '''
+
 for param in pdq:
     for param_seasonal in seasonal_pdq:
         try:
@@ -111,6 +146,7 @@ for param in pdq:
         except:
             continue
             '''
+
 mod1 = sm.tsa.statespace.SARIMAX(y,
     order=(0, 0, 0),
     seasonal_order=(1, 1, 0, 12),
@@ -119,5 +155,5 @@ mod1 = sm.tsa.statespace.SARIMAX(y,
 results2 = mod1.fit()
 print(results2.summary().tables[1])
 results2.plot_diagnostics(figsize=(15,12))
-
-#plt.show()
+"""
+plt.show()
