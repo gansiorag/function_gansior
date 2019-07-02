@@ -31,18 +31,35 @@ VIX Close	5	number (default)
 
 """
 
+fig1=plt.figure()
+ax1=fig1.add_subplot(111)
 
+fig2=plt.figure()
+ax2=fig2.add_subplot(111)
+
+#fig3=plt.figure()
+ax3=fig2.add_subplot(111)
 
 x2=[[xx] for xx in np.arange(0.,100.,1.)]
+x3=x2.copy()
+random.shuffle(x2)
 
 y=[]
-
+y2=[]
+y3=[]
 for kk in x2:
     y.append(0.5*kk[0]+3+10*math.sin(kk[0]/3.14)*random.random())
 
+for kk in x2:
+    y2.append(0.5*kk[0]+3+10*math.sin(kk[0]/3.14)*random.random())
+
+for kk in x3:
+    y3.append(0.5*kk[0]+3+10*math.sin(kk[0]/3.14)*random.random())
 #y=[6.0,4.4,5.0,9.0,7.2,4.8,6.0,10.0,8.0,5.6,6.4,11.0,9.0,6.6,7.0,10.8]
 
 #print(y)
+ax2.scatter(x2, y2)
+ax3.scatter(x3, y3, c='r')
 
 coef=CS.auto_corr(y)
 print(coef)
@@ -51,7 +68,12 @@ rr=coef.pop(0)
 rr=coef.pop(0)
 print(max(coef))
 x=range(1,len(coef)+1)
-plt.plot(x,coef)
+
+
+ax1.plot(x,coef)
+
+
+#plt.plot(x,coef)
 
 """
 #------------ end 1. ----------
