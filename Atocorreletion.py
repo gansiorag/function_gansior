@@ -35,14 +35,14 @@ fig1=plt.figure()
 ax1=fig1.add_subplot(111)
 
 fig2=plt.figure()
-ax2=fig2.add_subplot(111)
+ax2=fig2.add_subplot(211)
 
 #fig3=plt.figure()
-ax3=fig2.add_subplot(111)
+ax3=fig2.add_subplot(311)
 
 x2=[[xx] for xx in np.arange(0.,100.,1.)]
 x3=x2.copy()
-random.shuffle(x2)
+#random.shuffle(x2)
 
 y=[]
 y2=[]
@@ -53,13 +53,13 @@ for kk in x2:
 for kk in x2:
     y2.append(0.5*kk[0]+3+10*math.sin(kk[0]/3.14)*random.random())
 
-for kk in x3:
-    y3.append(0.5*kk[0]+3+10*math.sin(kk[0]/3.14)*random.random())
+# for kk in x3:
+#     y3.append(0.5*kk[0]+3+10*math.sin(kk[0]/3.14)*random.random())
 #y=[6.0,4.4,5.0,9.0,7.2,4.8,6.0,10.0,8.0,5.6,6.4,11.0,9.0,6.6,7.0,10.8]
 
 #print(y)
 ax2.scatter(x2, y2)
-ax3.scatter(x3, y3, c='r')
+#ax3.scatter(x3, y3, c='r')
 
 coef=CS.auto_corr(y)
 print(coef)
@@ -71,7 +71,11 @@ x=range(1,len(coef)+1)
 
 
 ax1.plot(x,coef)
-
+panddf=pd.DataFrame({'x2':x2,'y':y})
+print(panddf)
+decomposition=sm.tsa.seasonal_decompose(panddf['y'],model='additive')
+print("Trend = ",decomposition.seasonal )
+ax2.plot(decomposition.seasonal)
 
 #plt.plot(x,coef)
 
