@@ -17,7 +17,6 @@ plt.style.use('fivethirtyeight')
 
 fs=ln.LinearRegression()
 
-#---------1. ------- Исходные данные -----------------------
 """
 https://datahub.io/core/finance-vix/r/vix-daily.json
 
@@ -31,8 +30,6 @@ VIX Close	5	number (default)
 
 """
 
-fig1=plt.figure()
-ax1=fig1.add_subplot(111)
 
 fig2=plt.figure()
 ax2=fig2.add_subplot(211)
@@ -40,18 +37,109 @@ ax2=fig2.add_subplot(211)
 #fig3=plt.figure()
 ax3=fig2.add_subplot(311)
 
+#ax1=fig1.add_subplot(111)
+
+
+#ax2=fig1.add_subplot(211)
+
+
+#ax3=fig1.add_subplot(311)
+
+
 x2=[[xx] for xx in np.arange(0.,100.,1.)]
 x3=x2.copy()
 #random.shuffle(x2)
 
-y=[]
-y2=[]
-y3=[]
-for kk in x2:
-    y.append(0.5*kk[0]+3+10*math.sin(kk[0]/3.14)*random.random())
+#y=[6.0,4.4,5.0,9.0,7.2,4.8,6.0,10.0,8.0,5.6,6.4,11.0,9.0,6.6,7.0,10.8]
+#print(y)
 
-for kk in x2:
-    y2.append(0.5*kk[0]+3+10*math.sin(kk[0]/3.14)*random.random())
+y=[]
+for kk in x3:
+    y.append(0.5*kk[0]+3+10*math.sin(kk[0]/3.14))
+
+fig1=plt.figure(1)
+#plt.plot(x3, y,c='y')
+plt.title("Periodic curve with trend")
+plt.scatter(x3, y, c='r')
+#XX=np.column_stack((x3))
+XX = np.array(x3).reshape((-1,1))
+fs.fit(XX,y)
+yy=fs.predict(XX)
+print('coef b0 :', fs.intercept_)
+print('coef b1 :', fs.coef_)
+print('determin', fs.score(XX,y))
+
+plt.plot(x3,yy,'g-')
+
+fig11=plt.figure(11)
+coef=CS.auto_corr(y)
+#print("fig0 ", coef)
+rr=coef.pop(0)
+rr=coef.pop(0)
+print(max(coef))
+x7=range(1,len(coef)+1)
+plt.plot(x7,coef)
+plt.scatter(x7,coef, c='r')
+
+y1=[]
+for kk in x3:
+    y1.append(0.5*kk[0]+3+10*math.sin(kk[0]/3.14)*random.random())
+fig2=plt.figure(2)
+plt.plot(x3, y1)
+plt.title("Periodic curve with trend and random amplitude changes")
+fs.fit(XX,y1)
+yy1=fs.predict(XX)
+plt.plot(x3, yy1)
+print('coef b0 :', fs.intercept_)
+print('coef b1 :', fs.coef_)
+print('determin', fs.score(XX,y1))
+
+fig12=plt.figure(12)
+coef=CS.auto_corr(y)
+#print("fig1 ", coef)
+rr=coef.pop(0)
+rr=coef.pop(0)
+print(max(coef))
+x8=range(1,len(coef)+1)
+plt.plot(x8,coef)
+plt.scatter(x8,coef, c='r')
+
+y2=[]
+for kk in x3:
+    y2.append(0.5*kk[0]+3+10*math.sin(kk[0]*random.random()/3.14))
+fig3=plt.figure(3)
+plt.plot(x3, y2)
+plt.title("Periodic curve with trend and random periodic changes")
+
+fig13=plt.figure(13)
+coef=CS.auto_corr(y)
+#print("fig3 ", coef)
+rr=coef.pop(0)
+rr=coef.pop(0)
+print(max(coef))
+x9=range(1,len(coef)+1)
+plt.plot(x9,coef)
+plt.scatter(x9,coef, c='r')
+
+
+
+y3=[]
+for kk in x3:
+    y3.append(0.5*kk[0]+3*random.random()+10*math.sin(kk[0]/3.14))
+fig4=plt.figure(4)
+plt.plot(x3, y3)
+plt.title("Periodic curve with trend and random free path changes")
+
+fig14=plt.figure(14)
+coef=CS.auto_corr(y)
+#print("fig4 ", coef)
+rr=coef.pop(0)
+rr=coef.pop(0)
+print(max(coef))
+x10=range(1,len(coef)+1)
+plt.plot(x10,coef)
+plt.scatter(x10,coef, c='r')
+
 
 # for kk in x3:
 #     y3.append(0.5*kk[0]+3+10*math.sin(kk[0]/3.14)*random.random())
@@ -61,13 +149,41 @@ for kk in x2:
 ax2.scatter(x2, y2)
 #ax3.scatter(x3, y3, c='r')
 
-coef=CS.auto_corr(y)
-print(coef)
 
+y4=[]
+for kk in x3:
+    y4.append(0.5*kk[0]*random.random()+3+10*math.sin(kk[0]/3.14))
+fig5=plt.figure(5)
+plt.plot(x3, y4)
+plt.title("Periodic curve with trend and random corner changes")
+
+fig10=plt.figure(10)
+coef=CS.auto_corr(y4)
+#print("fig5 ", coef)
 rr=coef.pop(0)
 rr=coef.pop(0)
 print(max(coef))
-x=range(1,len(coef)+1)
+x7=range(1,len(coef)+1)
+plt.plot(x7,coef)
+
+
+
+y5=[]
+for kk in x3:
+    y5.append(0.5*kk[0]*random.random()+3*random.random()+10*math.sin(kk[0]/3.14))
+fig6=plt.figure(6)
+plt.plot(x3, y5)
+plt.title("Periodic curve with trend and random corner changes")
+
+fig9=plt.figure(9)
+coef=CS.auto_corr(y5)
+#print("fig6 ", coef)
+rr=coef.pop(0)
+rr=coef.pop(0)
+print(max(coef))
+x6=range(1,len(coef)+1)
+plt.plot(x6,coef)
+
 
 
 ax1.plot(x,coef)
@@ -76,6 +192,25 @@ print(panddf)
 decomposition=sm.tsa.seasonal_decompose(panddf['y'],model='additive')
 print("Trend = ",decomposition.seasonal )
 ax2.plot(decomposition.seasonal)
+
+y6=[]
+for kk in x3:
+    y6.append(0.7*kk[0]*random.random()+3*random.random()+
+              10*math.sin(kk[0]*random.random()/3.14)*random.random())
+fig7=plt.figure(7)
+plt.plot(x3, y6)
+plt.title("Periodic curve with trend and random corner changes")
+
+fig8=plt.figure(8)
+coef=CS.auto_corr(y6)
+#print("fig7 ", coef)
+rr=coef.pop(0)
+rr=coef.pop(0)
+print(max(coef))
+x=range(1,len(coef)+1)
+plt.plot(x,coef)
+
+
 
 #plt.plot(x,coef)
 
